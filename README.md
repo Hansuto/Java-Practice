@@ -182,3 +182,90 @@ public class Solution {
 }
 ```
 
+<h2>Problem 5</h2>
+
+Given an array `A` of integers and another non negative integer `k`, find if there exists 2 indices `i` and `j` such that `A[i] - A[j] = k, i != j`.
+
+**Example :**
+
+Input :
+
+```
+A : [1 5 3]
+k : 2
+```
+
+Output :
+
+```
+1
+```
+
+as `3 - 1 = 2`
+
+- Return `0 / 1` for this problem.
+
+<h3>Problem 5 - Naïve Solution</h3>
+
+```java
+public class Solution {
+	public int diffPossible(final List<Integer> a, int b) {
+	    for (int i = 0; i < a.size(); i++) {
+	        for (int j = 0; j < a.size(); j++) {
+	            if (i != j) {
+	                if (a.get(i) - a.get(j) == b)
+	                    return 1;
+	            }
+	        }
+	    }
+	    return 0;
+	}
+}
+```
+
+<h3>Problem 5 - Fancy Solution</h3>
+
+```java
+public class Solution {
+	public int diffPossible(final List<Integer> A, int B) {
+	    
+	    HashMap<Integer, Integer> hashMap = new HashMap<>();
+	    
+	    for (int num : A) {
+	        if (hashMap.containsKey(num)) {
+	            int value = hashMap.get(num);
+	            value++;
+	            hashMap.put(num, value);
+	        } else {
+	            hashMap.put(num, 1);
+	        }
+	    }
+	    
+	    for (int num : A) {
+	        
+	        int n = B + num;
+	        
+	        if (hashMap.containsKey(n)) {
+	            if (num == n && hashMap.get(n) > 1)
+	                return 1;
+	            else if (num != n)
+	                return 1;
+	        }
+	        
+	        n = num - B;
+	        
+	        if (hashMap.containsKey(n)) {
+	            if (num == n && hashMap.get(n) > 1)
+	                return 1;
+	            else if (num != n)
+	                return 1;
+	        }
+	    }
+	    
+	    return 0;
+	    
+	    
+	}
+}
+```
+
