@@ -98,18 +98,18 @@ So, return 1
 ```java
 public class Solution {
 	public int trailingZeroes(int a) {
-	    int factorial = 1;
-	    int counter = 0;
+		int factorial = 1;
+		int counter = 0;
 	    
-	    for (int factor = 2; factor <= a; factor++)
-            factorial *= factor;
+		for (int factor = 2; factor <= a; factor++)
+			factorial *= factor;
         
-        while (factorial % 10 == 0) {
-            counter++;
-            factorial /= 10;
-        }
+		while (factorial % 10 == 0) {
+			counter++;
+			factorial /= 10;
+		}
 	    
-	    return counter;
+		return counter;
 	}
 }
 ```
@@ -119,15 +119,15 @@ public class Solution {
 ```java
 public class Solution {
 	public int trailingZeroes(int a) {
-	    int sum=0;
+		int sum=0;
 	    
-        for(int i=5; i <= a; i*=5) 
-            sum += a/i;
+		for(int i=5; i <= a; i*=5) 
+			sum += a/i;
             
-        return sum;
+		return sum;
 	}
 }
 ```
 
-<h2>Problem 4</h2>
+
 
