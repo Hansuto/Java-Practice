@@ -131,3 +131,54 @@ public class Solution {
 
 <h2>Problem 4</h2>
 
+Given a linked list, return the node where the cycle begins. If there is no cycle, return `null`.
+
+Try solving it using constant additional space.
+
+**Example :**
+
+```
+Input : 
+
+                  ______
+                 |     |
+                 \/    |
+        1 -> 2 -> 3 -> 4
+
+Return the node corresponding to node 3. 
+```
+
+<h3>Problem 4 - Solution</h3>
+
+```javascript
+/**
+ * Definition for singly-linked list.
+ * class ListNode {
+ *     public int val;
+ *     public ListNode next;
+ *     ListNode(int x) { val = x; next = null; }
+ * }
+ */
+public class Solution {
+	public ListNode detectCycle(ListNode a) {
+	    
+	    if (a == null) {
+	        return null;
+	    } 
+	    
+	    HashSet<ListNode> nodes = new HashSet<>();
+	    
+	    while (a.next != null) {
+    	    if (nodes.contains(a)) {
+    	        return a;
+    	    } else {
+    	        nodes.add(a);
+    	        a = a.next;
+    	    }
+	    }
+	    
+	    return null;
+	}
+}
+```
+
