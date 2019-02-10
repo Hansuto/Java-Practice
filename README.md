@@ -339,3 +339,74 @@ public class Solution {
 }
 ```
 
+<h2>Problem 8</h2>
+
+Given a binary tree, check whether it is a mirror of itself (ie, symmetric around its center).
+
+**Example :**
+
+```
+    1
+   / \
+  2   2
+ / \ / \
+3  4 4  3
+```
+
+The above binary tree is symmetric. 
+But the following is not:
+
+```
+    1
+   / \
+  2   2
+   \   \
+   3    3
+```
+
+Return `0 / 1` ( 0 for false, 1 for true ) for this problem
+
+<h3>Problem 8 - Solution</h3>
+
+```java
+/**
+ * Definition for binary tree
+ * class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+public class Solution {
+	public int isSymmetric(TreeNode a) {
+	    
+	    if (a == null)
+	        return 0;
+	        
+	    if (equal(a.left, a.right)) {
+	        return 1;
+	    } else {
+	        return 0;
+	    }
+	}
+	
+	
+	public boolean equal(TreeNode node1, TreeNode node2) {
+	    
+	    if (node1 == null && node2 == null)
+	        return true;
+	        
+	    if (node1 == null || node2 == null)
+	        return false;
+	    
+	    if (node1.val != node2.val)
+	        return false;
+	    
+	    
+	    return equal(node1.left, node2.right) && equal(node1.right, node2.left);
+	}
+	
+}
+```
+
