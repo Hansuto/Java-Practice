@@ -410,3 +410,74 @@ public class Solution {
 }
 ```
 
+<h2>Problem 9</h2>
+
+Reverse bits of an 32 bit unsigned integer
+
+**Example 1:**
+
+x = 0,
+
+```
+          00000000000000000000000000000000  
+=>        00000000000000000000000000000000
+```
+
+return `0`
+
+**Example 2:**
+
+x = 3,
+
+```
+          00000000000000000000000000000011 
+=>        11000000000000000000000000000000
+```
+
+return `3221225472`
+
+<h3>Problem 9 - Naïve String Manipulation Solution</h3>
+
+```java
+import java.math.BigInteger;
+
+public class Solution {
+	public static long reverse(long a) {
+        String bs = Long.toBinaryString(a);
+	    StringBuilder binaryString = new StringBuilder();
+	    
+	    while (binaryString.length() + bs.length() < 32){
+	        binaryString.append("0");
+	    }
+       
+	    binaryString.append(bs);
+	    binaryString = binaryString.reverse();
+	    
+	    return parseLong(binaryString.toString(), 2);
+	}
+	
+	private static long parseLong(String s, int base) {
+        return new BigInteger(s, base).longValue();
+    }
+}
+```
+
+<h3>Problem 9 - Solution</h3>
+
+```java
+public class Solution {
+	public long reverse(long A) {
+	    long reverse = 0;
+	    
+	    for (int i = 0; i < 32; i++) {
+	        reverse = reverse << 1;
+	        if ((A & (1 << i)) != 0)
+	            reverse = reverse | 1;
+	    }
+	    
+	    return reverse;
+	    
+	}
+}
+```
+
