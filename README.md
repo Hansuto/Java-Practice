@@ -511,3 +511,37 @@ public class Solution {
 }
 ```
 
+<h2>Problem 11</h2>
+
+Remove duplicates from Sorted Array
+Given a sorted array, remove the duplicates in place such that each element appears only once and return the new length.
+
+**Note that even though we want you to return the new length, make sure to change the original array as well in place**
+
+Do not allocate extra space for another array, you must do this in place with constant memory.
+
+> **Example:** 
+> Given input array A = `[1,1,2]`,
+> Your function should return length = `2`, and A is now `[1,2]`.
+
+<h3>Problem 11 - Solution</h3>
+
+```java
+public class Solution {
+	public int removeDuplicates(ArrayList<Integer> a) {
+	    HashSet<Integer> hash = new HashSet<>();
+	    
+	    for (int i = 0; i < a.size(); i++ ) {
+	        if (hash.contains(a.get(i))) {
+	            a.remove(i);
+	            i--;
+	        } else {
+	            hash.add(a.get(i));
+	        }
+	    }
+	    
+	    return a.size();
+	}
+}
+```
+
