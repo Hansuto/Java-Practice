@@ -649,7 +649,7 @@ Return
 
 ```java
 public class Solution {
-	public ArrayList<ArrayList<Integer>> generate(int a) {
+    public ArrayList<ArrayList<Integer>> generate(int a) {
         ArrayList<ArrayList<Integer>> pascal = new ArrayList<>();
         ArrayList<Integer> firstRow = new ArrayList<>();
         int prevRow = 1;
@@ -683,7 +683,7 @@ public class Solution {
         }   
         
         return pascal;
-	}
+    }
 }
 ```
 
