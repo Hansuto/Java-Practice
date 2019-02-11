@@ -650,19 +650,19 @@ Return
 ```java
 public class Solution {
 	public ArrayList<ArrayList<Integer>> generate(int a) {
-	    ArrayList<ArrayList<Integer>> pascal = new ArrayList<>();
+        ArrayList<ArrayList<Integer>> pascal = new ArrayList<>();
         ArrayList<Integer> firstRow = new ArrayList<>();
         int prevRow = 1;
         int ind1 = 0;
         int ind2 = 1;
-	    
-	    if (a == 0) return pascal;
-
-	    firstRow.add(1);
+        
+        if (a == 0) return pascal;
+        
+        firstRow.add(1);
         pascal.add(firstRow);
-	    
-	    if (a == 1) return pascal;
-
+        
+        if (a == 1) return pascal;
+        
         ArrayList<Integer> secondRow = new ArrayList<>();
         secondRow.add(1);
         secondRow.add(1);
@@ -674,15 +674,15 @@ public class Solution {
             
             for(int j = 0; j < prevRow; j++)
                 newRow.add(pascal.get(prevRow).get(ind1++) + pascal.get(prevRow).get(ind2++));
-
+        
             newRow.add(1);
             pascal.add(newRow);
             prevRow++;
             ind1 = 0;
             ind2 = 1;
         }   
-
-	    return pascal;
+        
+        return pascal;
 	}
 }
 ```
