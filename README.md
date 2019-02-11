@@ -616,7 +616,7 @@ public class Solution {
         // Base 26 Conversion
         for (int i = 0; i < a.length(); i++) {
             result *= 26;
-            result += a.charAt(i) - ('A' + 1);
+            result += (a.charAt(i) - 'A') + 1;
         }
         return result;
     }
