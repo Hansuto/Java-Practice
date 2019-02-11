@@ -623,3 +623,67 @@ public class Solution {
 }
 ```
 
+<h2>Problem 14</h2>
+
+Given numRows, generate the first numRows of Pascal’s triangle.
+
+Pascal’s triangle : To generate A[C] in row R, sum up A’[C] and A’[C-1] from previous row R - 1.
+
+**Example:**
+
+Given numRows = 5,
+
+Return
+
+```
+[
+     [1],
+     [1,1],
+     [1,2,1],
+     [1,3,3,1],
+     [1,4,6,4,1]
+]
+```
+
+<h3>Problem 14 - Solution</h3>
+
+```java
+public class Solution {
+	public ArrayList<ArrayList<Integer>> generate(int a) {
+	    ArrayList<ArrayList<Integer>> pascal = new ArrayList<>();
+        ArrayList<Integer> firstRow = new ArrayList<>();
+        int prevRow = 1;
+        int ind1 = 0;
+        int ind2 = 1;
+	    
+	    if (a == 0) return pascal;
+
+	    firstRow.add(1);
+        pascal.add(firstRow);
+	    
+	    if (a == 1) return pascal;
+
+        ArrayList<Integer> secondRow = new ArrayList<>();
+        secondRow.add(1);
+        secondRow.add(1);
+        pascal.add(secondRow);
+        
+        for (int i = 0; i < (a - 2); i++) {
+            ArrayList<Integer> newRow = new ArrayList<>();
+            newRow.add(1);
+            
+            for(int j = 0; j < prevRow; j++)
+                newRow.add(pascal.get(prevRow).get(ind1++) + pascal.get(prevRow).get(ind2++));
+
+            newRow.add(1);
+            pascal.add(newRow);
+            prevRow++;
+            ind1 = 0;
+            ind2 = 1;
+        }   
+
+	    return pascal;
+	}
+}
+```
+
