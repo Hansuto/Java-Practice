@@ -613,6 +613,7 @@ Given a column title as appears in an Excel sheet, return its corresponding colu
 public class Solution {
     public int titleToNumber(String a) {
         int result = 0;
+        // Base 26 Conversion
         for (int i = 0; i < a.length(); i++) {
             result *= 26;
             result += a.charAt(i) - ('A' + 1);
