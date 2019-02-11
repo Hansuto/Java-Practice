@@ -545,3 +545,80 @@ public class Solution {
 }
 ```
 
+<h2>Problem 12</h2>
+
+Reverse digits of an integer.
+
+**Example1:**
+
+x = 123,
+
+return 321
+
+**Example2:**
+
+x = -123,
+
+return -321
+
+Return 0 if the result overflows and does not fit in a 32 bit signed integer
+
+<h3>Problem 12 - Solution</h3>
+
+```java
+public class Solution {
+	public int reverse(int A) {
+        int sign = (A > 0) ? 1 : -1;
+        long ret = 0;
+        
+        A *= sign;
+        
+        while(A > 0) {
+            ret *= 10;
+            ret += A%10;
+            A /= 10;
+        }
+        
+        if (ret > 0x7fffffff) return 0;
+        return ((int)ret) * sign;
+    }
+}
+```
+
+<h2>Problem 13</h2>
+
+Given a column title as appears in an Excel sheet, return its corresponding column number.
+
+**Example:**
+
+```
+    A -> 1
+    
+    B -> 2
+    
+    C -> 3
+    
+    ...
+    
+    Z -> 26
+    
+    AA -> 27
+    
+    AB -> 
+```
+
+<h3>Problem 13 - Solution</h3>
+
+```java
+public class Solution {
+    public int titleToNumber(String a) {
+        int result = 0;
+        for (int i = 0; i < a.length(); i++) {
+            result *= 26;
+            result += a.charAt(i) - ('A' + 1);
+        }
+        return result;
+    }
+}
+```
+
