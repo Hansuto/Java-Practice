@@ -743,3 +743,86 @@ public class Solution {
 }
 ```
 
+## Problem 16
+
+Given a linked list, remove the nth node from the end of list and return its head.
+
+For example,
+Given linked list: `1->2->3->4->5`, and `n = 2`.
+After removing the second node from the end, the linked list becomes `1->2->3->5`.
+
+> **Note:**
+> \* If n is greater than the size of the list, remove the first node of the list.
+
+Try doing it using constant additional space.
+
+### Problem 16 - Solution (With test driver)
+
+```java
+import java.io.*;
+import java.util.*;
+
+class ListNode {
+   public int val;
+   public ListNode next;
+  
+  ListNode (int a) {
+    this.val = a;
+    this.next = null;
+  }
+}
+
+class Solution {
+  
+  public static void main(String[] args) {
+      ListNode a = new ListNode(1);
+      ListNode b = new ListNode(2);
+      ListNode c = new ListNode(3);
+      ListNode d = new ListNode(4);
+      ListNode e = new ListNode(5);
+
+      a.next = b;
+      b.next = c;
+      c.next = d;
+      d.next = e;
+    
+      a = removeNthFromEnd(a, 5);
+    
+      while (a != null) {
+        System.out.println(a.val);
+        a = a.next;
+      }
+  }
+  
+  public static ListNode removeNthFromEnd(ListNode a, int b) {
+    int listSize = 0;
+    ListNode temp = a;
+
+    if (b == 0) {
+        return a;
+    }
+
+    while (temp != null) {
+        listSize++;
+        temp = temp.next;
+    }
+
+    temp = a;
+
+    if (listSize <= b) {
+        temp = a.next;
+        a.next = null;
+        return temp;
+    } else {
+        for(int i = 0; i < (listSize - (b + 1)); i++){
+            temp = temp.next;
+        }
+
+        temp.next = temp.next.next;
+    }
+
+    return a;
+  }
+}
+```
+
