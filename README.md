@@ -826,3 +826,51 @@ class Solution {
 }
 ```
 
+## Problem 17 - Asked During Interview
+
+Given a String, determine if it is a palindrome or not.
+
+For example,
+`A man, a plan, a canal. Panama!`, and `race  ecar` should return true.
+
+`chicken`, and `gravy` should return false.
+
+### Problem 17 - Solution
+
+```java
+public class JavaTest
+{
+    public static boolean foo (String a) {
+
+        int x = a.length() - 1; 
+        int i = 0;
+
+        a = a.toLowerCase();
+
+        while (i != x) {
+            while (!Character.isLetter(a.charAt(i)) && (i != x))
+                i++;
+            
+            while (!Character.isLetter(a.charAt(x)) && (i != x))
+                x--;
+
+            if (i != x) {
+                if ((a.charAt(i) == a.charAt(x))) {
+                    x--;
+                    i++;
+                } else {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    public static void main(String [] args)
+    {
+        String str = "A man, a plan, a canal. Panama!";
+        System.out.println(foo(str));
+    }
+}
+```
+
