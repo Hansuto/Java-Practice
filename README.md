@@ -1,6 +1,6 @@
-<h1>Java Practice</h1>
+# Java Practice
 
-<h2>Problem 1</h2>
+## Problem 1
 
 Given an unsorted linked list, delete all duplicates such that each element appear only once.
 
@@ -8,7 +8,7 @@ For example,
 Given `1->1->2`, return `1->2`.
 Given `1->1->2->3->3`, return `1->2->3`.
 
-<h3>Problem 1 - Solution</h3>
+### Problem 1 - Solution
 
 ```java
 /**
@@ -47,7 +47,7 @@ public class Solution {
 }
 ```
 
-<h2>Problem 2</h2>
+## Problem 2
 
 Write a function that takes an unsigned integer and returns the number of `1` bits it has.
 
@@ -61,7 +61,7 @@ The 32-bit integer `11` has binary representation
 
 so the function should return `3`.
 
-<h3>Problem 2 - Solution</h3>
+### Problem 2 - Solution
 
 ```Javascript
 public class Solution {
@@ -77,8 +77,7 @@ public class Solution {
 }
 ```
 
-
-<h2>Problem 3</h2>
+## Problem 3
 
 Given an integer n, return the number of trailing zeroes in n!.
 
@@ -93,7 +92,7 @@ Number of trailing zeros = 1
 So, return 1
 ```
 
-<h3>Problem 3 - Naïve Solution</h3>
+### Problem 3 - Naïve Solution
 
 ```java
 public class Solution {
@@ -114,7 +113,7 @@ public class Solution {
 }
 ```
 
-<h3>Problem 3 - Fancy Solution</h3>
+### Problem 3 - Fancy Solution
 
 ```java
 public class Solution {
@@ -129,7 +128,7 @@ public class Solution {
 }
 ```
 
-<h2>Problem 4</h2>
+## Problem 4
 
 Given a linked list, return the node where the cycle begins. If there is no cycle, return `null`.
 
@@ -148,7 +147,7 @@ Input :
 Return the node corresponding to node 3. 
 ```
 
-<h3>Problem 4 - Solution</h3>
+### Problem 4 - Solution
 
 ```javascript
 /**
@@ -182,7 +181,7 @@ public class Solution {
 }
 ```
 
-<h2>Problem 5</h2>
+## Problem 5
 
 Given an array `A` of integers and another non negative integer `k`, find if there exists 2 indices `i` and `j` such that `A[i] - A[j] = k, i != j`.
 
@@ -205,7 +204,7 @@ as `3 - 1 = 2`
 
 - Return `0 / 1` for this problem.
 
-<h3>Problem 5 - Naïve Solution</h3>
+### Problem 5 - Naïve Solution
 
 ```java
 public class Solution {
@@ -223,7 +222,7 @@ public class Solution {
 }
 ```
 
-<h3>Problem 5 - Fancy Solution</h3>
+### Problem 5 - Fancy Solution
 
 ```java
 public class Solution {
@@ -269,7 +268,7 @@ public class Solution {
 }
 ```
 
-<h2>Problem 6</h2>
+## Problem 6
 
 Given an array of integers, every element appears twice except for one. Find that single one.
 
@@ -282,7 +281,7 @@ Input : [1 2 2 3 1]
 Output : 3
 ```
 
-<h3>Problem 6 - SUPER FANCY Solution</h3>
+### Problem 6 - SUPER FANCY Solution
 
 ```java
 public class Solution {
@@ -300,7 +299,7 @@ public class Solution {
 }
 ```
 
-<h2>Problem 7</h2>
+## Problem 7
 
 Given a string `s` consists of upper/lower-case alphabets and empty space characters `' '`, return the length of last word in the string.
 
@@ -316,7 +315,7 @@ return `5` as `length("World") = 5`.
 
 *Please make sure you try to solve this problem without using library functions. Make sure you only traverse the string once.*
 
-<h3>Problem 7 - Solution</h3>
+### Problem 7 - Solution
 
 ```java
 public class Solution {
@@ -339,7 +338,7 @@ public class Solution {
 }
 ```
 
-<h2>Problem 8</h2>
+## Problem 8
 
 Given a binary tree, check whether it is a mirror of itself (ie, symmetric around its center).
 
@@ -366,7 +365,7 @@ But the following is not:
 
 Return `0 / 1` ( 0 for false, 1 for true ) for this problem
 
-<h3>Problem 8 - Solution</h3>
+### Problem 8 - Solution
 
 ```java
 /**
@@ -410,7 +409,7 @@ public class Solution {
 }
 ```
 
-<h2>Problem 9</h2>
+## Problem 9
 
 Reverse bits of an 32 bit unsigned integer
 
@@ -436,7 +435,7 @@ x = 3,
 
 return `3221225472`
 
-<h3>Problem 9 - Naïve String Manipulation Solution</h3>
+### Problem 9 - Naïve String Manipulation Solution
 
 ```java
 import java.math.BigInteger;
@@ -462,7 +461,7 @@ public class Solution {
 }
 ```
 
-<h3>Problem 9 - Solution</h3>
+### Problem 9 - Solution
 
 ```java
 public class Solution {
@@ -481,7 +480,7 @@ public class Solution {
 }
 ```
 
-<h2>Problem 10</h2>
+## Problem 10
 
 **Remove Element**
 
@@ -495,7 +494,7 @@ Also return the number of elements left in the array after the operation.
 
 Try to do it in less than linear additional space complexity.
 
-<h3>Problem 10 - Solution</h3>
+### Problem 10 - Solution
 
 ```java
 public class Solution {
@@ -511,7 +510,7 @@ public class Solution {
 }
 ```
 
-<h2>Problem 11</h2>
+## Problem 11
 
 Remove duplicates from Sorted Array
 Given a sorted array, remove the duplicates in place such that each element appears only once and return the new length.
@@ -524,7 +523,7 @@ Do not allocate extra space for another array, you must do this in place with co
 > Given input array A = `[1,1,2]`,
 > Your function should return length = `2`, and A is now `[1,2]`.
 
-<h3>Problem 11 - Solution</h3>
+### Problem 11 - Solution
 
 ```java
 public class Solution {
@@ -545,7 +544,7 @@ public class Solution {
 }
 ```
 
-<h2>Problem 12</h2>
+## Problem 12
 
 Reverse digits of an integer.
 
@@ -563,7 +562,7 @@ return -321
 
 Return 0 if the result overflows and does not fit in a 32 bit signed integer
 
-<h3>Problem 12 - Solution</h3>
+### Problem 12 - Solution
 
 ```java
 public class Solution {
@@ -585,7 +584,7 @@ public class Solution {
 }
 ```
 
-<h2>Problem 13</h2>
+## Problem 13
 
 Given a column title as appears in an Excel sheet, return its corresponding column number.
 
@@ -607,7 +606,7 @@ Given a column title as appears in an Excel sheet, return its corresponding colu
     AB -> 
 ```
 
-<h3>Problem 13 - Solution</h3>
+### Problem 13 - Solution
 
 ```java
 public class Solution {
@@ -623,7 +622,7 @@ public class Solution {
 }
 ```
 
-<h2>Problem 14</h2>
+## Problem 14
 
 Given numRows, generate the first numRows of Pascal’s triangle.
 
@@ -645,7 +644,7 @@ Return
 ]
 ```
 
-<h3>Problem 14 - Solution</h3>
+### Problem 14 - Solution
 
 ```java
 public class Solution {
@@ -684,6 +683,63 @@ public class Solution {
         
         return pascal;
     }
+}
+```
+
+## Problem 15
+
+Given a non-negative number represented as an array of digits,
+
+add 1 to the number ( increment the number represented by the digits ).
+
+The digits are stored such that the most significant digit is at the head of the list.
+
+**Example:**
+
+If the vector has `[1, 2, 3]`
+
+the returned vector should be `[1, 2, 4]`
+
+as `123 + 1 = 124`.
+
+> **NOTE:** Certain things are intentionally left unclear in this question which you should practice asking the interviewer.
+> For example, for this problem, following are some good questions to ask :
+>
+> - **Q :** Can the input have 0’s before the most significant digit. Or in other words, is `0 1 2 3` a valid input?
+> - **A :** For the purpose of this question, **YES**
+> - **Q :** Can the output have 0’s before the most significant digit? Or in other words, is `0 1 2 4` a valid output?
+> - **A :** For the purpose of this question, **NO**. Even if the input has zeroes before the most significant digit.
+
+### Problem 15 - Solution
+
+```java
+public class Solution {
+	public ArrayList<Integer> plusOne(ArrayList<Integer> a) {
+        
+        for(int i = a.size() - 1; i >= 0; i--) {
+            // If the digit is not 9, just increment by 1
+            if (a.get(i) != 9) {
+                a.set(i, a.get(i) + 1);
+                break;
+            // Otherwise, set digit to 0 and move back one digit
+            // to increment
+            } else {
+                // Edge case: [9, 9, ..., 9]
+                if (i == 0){
+                    a.set(0, 1);
+                    a.add(0);
+                } else {
+                    a.set(i, 0);
+                }
+            }
+        }
+        
+        // Remove leading zeros
+        for(int i = 0; a.get(i) == 0; i++)
+            a.remove(i--);
+        
+        return a;
+	}
 }
 ```
 
